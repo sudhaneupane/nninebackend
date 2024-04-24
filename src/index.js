@@ -11,7 +11,7 @@ dotenv.config({
 connectDB()
 .then(async()=>{
     const connectionInstance=mongoose.connection
-    app.listen(process.env.PORT || 7000,`Server listening at port http://localhost:${PORT}`)
+    app.listen(process.env.PORT || 8000,`Server listening at port http://localhost:${PORT}`)
     try {
         connectionInstance.once('open',async()=>{
             const users=await fetchData()
@@ -23,4 +23,5 @@ connectDB()
 })
 .catch((error)=>{
     console.log('Database connection failed',error);
+
 })

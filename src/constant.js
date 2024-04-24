@@ -1,1 +1,3 @@
-const DB_NAME="nninebackend"
+const DB_NAME = "nninebackend"
+
+export default DB_NAME

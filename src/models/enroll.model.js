@@ -14,7 +14,7 @@ const EnrollModel = new Schema({
         type:Number,
         required:true,
     },
-    loe:{
+    loe:{  //level of education
         type:String,
         required:true,
     },
@@ -22,13 +22,12 @@ const EnrollModel = new Schema({
         type:String,
         required:true,
     },
-    cBTime:{
+    college:{    //callback time
         type:String,
         required:true,
     },
-    source:{
+    message:{
         type:String,
-        required:true,
     }, 
 },
 {

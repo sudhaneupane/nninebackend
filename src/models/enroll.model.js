@@ -22,13 +22,12 @@ const EnrollModel = new Schema({
         type:String,
         required:true,
     },
-    cBTime:{    //callback time
+    college:{    //callback time
         type:String,
         required:true,
     },
-    source:{
+    message:{
         type:String,
-        required:true,
     }, 
 },
 {

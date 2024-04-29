@@ -10,9 +10,9 @@ const enrollUser=asyncHandler(async(req,res)=>{
     // send response to frontend -done
     // try catch for error and success -done
 
-   const {email,name,Number,loe,preferedCourse,cBTime,source}=req.body
+   const {email,name,Number,loe,preferedCourse,college,message}=req.body
    
-   if (![email, name, loe, preferedCourse, cBTime, source].every((field) => typeof field === 'string' && field.trim() !== "")) {
+   if (![email, name, loe, preferedCourse, college, message].every((field) => typeof field === 'string' && field.trim() !== "")) {
     return res.status(400).json({ success: false, msg: "All fields are required" });}
 
     if(!Number){
@@ -26,8 +26,8 @@ const enrollUser=asyncHandler(async(req,res)=>{
             Number,
             loe,
             preferedCourse,
-            cBTime,
-            source
+            college,
+            message
         });
 
         res.status(201).json({ msg:"User registered successfully"});

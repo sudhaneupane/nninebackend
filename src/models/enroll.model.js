@@ -10,7 +10,7 @@ const EnrollModel = new Schema({
         required:true,
         
     },
-    Number:{
+    number:{
         type:Number,
         required:true,
     },
@@ -22,7 +22,7 @@ const EnrollModel = new Schema({
         type:String,
         required:true,
     },
-    college:{    //callback time
+    college:{    
         type:String,
         required:true,
     },

@@ -15,7 +15,7 @@ const enrollUser=asyncHandler(async(req,res)=>{
    if (![email, name, loe, preferedCourse, college, message].every((field) => typeof field === 'string' && field.trim() !== "")) {
     return res.status(400).json({ success: false, msg: "All fields are required" });}
 
-    if(!Number){
+    if(!number){
         return res.status(400).json({ success: false, msg: "All fields are required" }); 
     }
 
@@ -23,14 +23,14 @@ const enrollUser=asyncHandler(async(req,res)=>{
         const user = await Enroll.create({
             email,
             name,
-            Number,
+            number,
             loe,
             preferedCourse,
             college,
             message
         });
 
-        res.status(201).json({ msg:"User registered successfully"});
+        res.status(201).json({ msg:"Course registered successfully"});
     } catch (error) {
         res.status(500).json({ success: false, msg: "An error occurred while saving user data" });
     }

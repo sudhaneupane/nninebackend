@@ -10,22 +10,23 @@ const EnrollModel = new Schema({
         required:true,
         
     },
-    number:{
+    phone:{
         type:Number,
         required:true,
     },
-    loe:{  //level of education
+    schoolCollegeName:{
+        type:String,
+
+    },
+    levelOfEducation:{  //level of education
         type:String,
         required:true,
     },
-    preferedCourse:{
+    ourses:{
         type:String,
         required:true,
     },
-    college:{    
-        type:String,
-        required:true,
-    },
+  
     message:{
         type:String,
     }, 

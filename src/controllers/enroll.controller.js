@@ -10,12 +10,12 @@ const enrollUser=asyncHandler(async(req,res)=>{
     // send response to frontend -done
     // try catch for error and success -done
 
-   const {email,name,Number,loe,preferedCourse,college,message}=req.body
+   const {email,name,phone,levelOfEducation,courses,schoolCollegeName,message}=req.body
    
-   if (![email, name, loe, preferedCourse, college, message].every((field) => typeof field === 'string' && field.trim() !== "")) {
+   if (![email, name, levelOfEducation, courses, schoolCollegeName, message].every((field) => typeof field === 'string' && field.trim() !== "")) {
     return res.status(400).json({ success: false, msg: "All fields are required" });}
 
-    if(!number){
+    if(!phone){
         return res.status(400).json({ success: false, msg: "All fields are required" }); 
     }
 
@@ -23,10 +23,10 @@ const enrollUser=asyncHandler(async(req,res)=>{
         const user = await Enroll.create({
             email,
             name,
-            number,
-            loe,
-            preferedCourse,
-            college,
+            phone,
+            levelOfEducation,
+            courses,
+            schoolCollegeName,
             message
         });
 

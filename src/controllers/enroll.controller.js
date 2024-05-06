@@ -9,17 +9,15 @@ const enrollUser=asyncHandler(async(req,res)=>{
     // check response in mongodb
     // send response to frontend -done
     // try catch for error and success -done
-
-   const {email,name,phone,levelOfEducation,courses,schoolCollegeName,message}=req.body
-   console.log(email,name,phone);
-   
-   if (![email, name, levelOfEducation, courses, schoolCollegeName, message].every((field) => typeof field === 'string' && field.trim() !== "")) {
+    
+    const {email,name,phone,levelOfEducation,courses,schoolCollegeName,message}=req.body
+   console.log(email,name,phone,levelOfEducation,courses,schoolCollegeName,message);
+   if (![email, name, levelOfEducation, courses,].every((field) => typeof field === 'string' && field.trim() !== "")) {
+    console.log(`all fields required error`);
     return res.status(400).json({ success: false, msg: "All fields are required" });}
-
     if(!phone){
         return res.status(400).json({ success: false, msg: "All fields are required" }); 
     }
-
     try {
         const user = await Enroll.create({
             email,
@@ -30,13 +28,9 @@ const enrollUser=asyncHandler(async(req,res)=>{
             schoolCollegeName,
             message
         });
-
         res.status(201).json({ msg:"Course registered successfully"});
     } catch (error) {
         res.status(500).json({ success: false, msg: "An error occurred while saving user data" });
     }
-
-
 })
-
 export {enrollUser}

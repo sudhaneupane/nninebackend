@@ -30,6 +30,7 @@ const enrollUser=asyncHandler(async(req,res)=>{
         });
         res.status(201).json({ msg:"Course registered successfully"});
     } catch (error) {
+        console.log(error)
         res.status(500).json({ success: false, msg: "An error occurred while saving user data" });
     }
 })

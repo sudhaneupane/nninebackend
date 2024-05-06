@@ -12,7 +12,10 @@ const enrollUser=asyncHandler(async(req,res)=>{
     
     const {email,name,phone,levelOfEducation,courses,schoolCollegeName,message}=req.body
    console.log(email,name,phone,levelOfEducation,courses,schoolCollegeName,message);
-   if (![email, name, levelOfEducation, courses,].every((field) => typeof field === 'string' && field.trim() !== "")) {
+   if (![email, name, levelOfEducation].every((field) => typeof field === 'string' && field.trim() !== "") || !Array.isArray(courses) || courses.length === 0) {
+    console.log(`all fields required error`);
+    return res.status(400).json({ success: false, msg: "All fields are required" });
+} if (![email, name, levelOfEducation, courses,].every((field) => typeof field === 'string' && field.trim() !== "")) {
     console.log(`all fields required error`);
     return res.status(400).json({ success: false, msg: "All fields are required" });}
     if(!phone){

@@ -17,13 +17,9 @@ import enrollUser from './router/enroll.router.js'
 app.use('/api/v1/courses',enrollUser)
 
 
-// routes import 
-import enrollRouter from "./router/enroll.router.js"
-
 // routes declaration
 app.use('/',(req,res)=>{
     res.send("this is main hai")
 })
-app.use('/api/v1/enroll',enrollRouter)
 
 export {app}

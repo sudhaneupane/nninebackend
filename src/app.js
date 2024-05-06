@@ -11,16 +11,19 @@ app.use(express.static("public"))
 // Serve static files from the "public" directory
 app.use(express.static("public"));
 //router import :
-import courseRouter from './routes/course.route'
+import enrollUser from './router/enroll.router.js'
 
 //router declaration ::
-app.use('/api/v1/courses',courseRouter)
+app.use('/api/v1/courses',enrollUser)
 
 
 // routes import 
 import enrollRouter from "./router/enroll.router.js"
 
 // routes declaration
+app.use('/',(req,res)=>{
+    res.send("this is main hai")
+})
 app.use('/api/v1/enroll',enrollRouter)
 
 export {app}

@@ -22,7 +22,7 @@ const EnrollModel = new Schema({
         type:String,
         required:true,
     },
-    ourses:{
+    courses:{
         type:String,
         required:true,
     },

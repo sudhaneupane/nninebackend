@@ -9,7 +9,6 @@ connectDB().then(()=>{
     app.listen(process.env.port || 8000,()=>{
         console.log('App is running on port 8000');
     }
-
     )
 }).catch((err)=>{
     console.log(`Mongodb connection failed err::${err}`);

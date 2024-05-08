@@ -11,10 +11,12 @@ app.use(express.static("public"));
 //router import :
 import enrollUser from './router/enroll.router.js'
 import dashboardRouter from './router/dashboard.router.js'
+import userRouter from './router/user.router.js'
 
 //router declaration ::
 app.use('/api/v1/courses',enrollUser)
 app.use('/api/v1/dashboard',dashboardRouter)
+app.use('/api/v1/user',userRouter)
 // routes declaration
 app.use('/',(req,res)=>{
     res.send("this is main hai")

@@ -8,17 +8,20 @@ app.use(cors({
 app.use(express.json({limit:"20kb"}))//accept the json from frontenda
 // Serve static files from the "public" directory
 app.use(express.static("public"));
+
 //router import :
 import enrollUser from './router/enroll.router.js'
 import dashboardRouter from './router/dashboard.router.js'
 import userRouter from './router/user.router.js'
+import employeeRouter from './router/employee.router.js'
 
 //router declaration ::
 app.use('/api/v1/courses',enrollUser)
 app.use('/api/v1/dashboard',dashboardRouter)
 app.use('/api/v1/user',userRouter)
+app.use('/api/v1/employee',employeeRouter)
 // routes declaration
-app.use('/',(req,res)=>{
-    res.send("this is main hai")
-})
+// app.use('/',(req,res)=>{
+//     res.send("this is main hai")
+// })
 export {app}

@@ -21,4 +21,21 @@ const courseInfo=asyncHandler(async(req,res)=>{
     }
 })
 
-export {courseInfo}
+const getCourseDetails =async(req,res)=>{
+    //data fetch from database:
+    //send in response
+    try {
+        console.log('route entered');
+        const courseData = await Course.findOne({});
+        console.log(courseData);
+        res.status(200).json(courseData)
+    } catch (error) {
+        console.log(error);
+        
+    }
+
+}
+
+export {courseInfo,
+    getCourseDetails
+}

@@ -8,7 +8,6 @@ attendanceSchema = mongoose.Schema({
     employee:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Employee',
-        required:true,
     },
     time:{
         type:String,

@@ -16,6 +16,9 @@ const studentSchema = mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"Course"
     }
+},
+{
+    timestamps:true
 })
 
 export const Student = mongoose.model("Student",studentSchema)

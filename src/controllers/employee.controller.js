@@ -3,7 +3,6 @@ import { asyncHandler } from '../utils/asyncHandler.js'
 
 const employeedata = asyncHandler(async(req,res)=>{
     const { email, name, phone , address} = req.body;
-    
     if (![email, name,address,phone].every((field) => typeof field === 'string' && field.trim() !== "")) {
         return res.status(400).json({ success: false, msg: "All fields are required" });
     }

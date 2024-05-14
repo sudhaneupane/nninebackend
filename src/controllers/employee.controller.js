@@ -19,5 +19,17 @@ const employeedata = asyncHandler(async(req,res)=>{
     res.status(500).json({ success: false, msg: "An error occurred while saving the data" });
     }
 })
+const getEmployeeData=async(req,res)=>{
+    try {
+        // console.log("get router invoked");
+        const getdata=await Employee.findOne({})
+        res.status(200).json(getdata)
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
 
-export {employeedata}
+export {employeedata,
+    getEmployeeData
+}

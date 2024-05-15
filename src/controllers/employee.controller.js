@@ -22,7 +22,7 @@ const employeedata = asyncHandler(async(req,res)=>{
 const getEmployeeData=async(req,res)=>{
     try {
         // console.log("get router invoked");
-        const getdata=await Employee.findOne({})
+        const getdata=await Employee.find({})
         res.status(200).json(getdata)
     } catch (error) {
         console.log(error);

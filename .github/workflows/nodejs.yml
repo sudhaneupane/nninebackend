@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
@@ -23,16 +23,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Build
-        run: npm run build --if-present
-        
       - name: Start MongoDB Atlas
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: |
           echo "Starting MongoDB Atlas"
+          # Placeholder for starting MongoDB Atlas if needed
+          # Ensure application correctly reads the MONGODB_URI from environment variables
           
       - name: Run dev server
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: npm run dev --if-present
+

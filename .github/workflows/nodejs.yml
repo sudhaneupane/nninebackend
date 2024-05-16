@@ -25,7 +25,7 @@ jobs:
         
       - name: Start MongoDB Atlas
         env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          MONGODB_URL: ${{ secrets.MONGODB_URL }}
         run: |
           echo "Starting MongoDB Atlas"
           # Placeholder for starting MongoDB Atlas if needed
@@ -33,6 +33,6 @@ jobs:
           
       - name: Run dev server
         env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          MONGODB_URL: ${{ secrets.MONGODB_URL }}
         run: npm run dev --if-present
 

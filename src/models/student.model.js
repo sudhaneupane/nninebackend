@@ -12,9 +12,9 @@ const studentSchema = mongoose.Schema({
         type:String,
         required:true,
     },
-    Course:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Course"
+    course:{
+        type:String,
+        required:true,
     }
 },
 {

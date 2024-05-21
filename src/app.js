@@ -28,7 +28,7 @@ app.use('/api/v1/courselog',courseRouter)
 app.use('/api/v1/attendlog',attendanceRouter)
 
 // routes declaration
-// app.use('/',(req,res)=>{
-//     res.send("this is main hai")
-// })
+app.use('/',(req,res)=>{
+    res.send("this is main hai")
+})
 export {app}

@@ -2,10 +2,9 @@ import { Student } from "../models/student.model.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
 const studentInfo = asyncHandler(async (req, res) => {
-  const { name, email, phone, course } = req.body;
-
+  const { name, email, phone, courseId } = req.body;
   if (
-    ![email, name, phone, course].every(
+    ![email, name, phone, courseId].every(
       (field) => typeof field === "string" && field.trim() !== ""
     )
   ) {
@@ -13,13 +12,12 @@ const studentInfo = asyncHandler(async (req, res) => {
       .status(400)
       .json("All fields are required");
   }
-
   try {
     const existingStudent = await Student.findOne({
       name,
       phone,
       email,
-      course,
+      courseId,
     });
     if (existingStudent) {
       return res.status(409).json("Student already exists");
@@ -28,7 +26,7 @@ const studentInfo = asyncHandler(async (req, res) => {
       name,
       phone,
       email,
-      course,
+      courseId,
     });
 
     res.status(201).json("success");

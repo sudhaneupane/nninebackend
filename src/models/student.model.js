@@ -12,10 +12,13 @@ const studentSchema = mongoose.Schema({
         type:String,
         required:true,
     },
-    Course:{
+    course:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Course"
     }
+},
+{
+    timestamps:true
 })
 
 export const Student = mongoose.model("Student",studentSchema)

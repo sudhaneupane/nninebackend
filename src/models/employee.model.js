@@ -21,7 +21,9 @@ const employeeSchema = mongoose.Schema({
         type:String,
         required:true,
     },
-
-
+    },
+{
+    timestamps:true
 })
+
 export const Employee = mongoose.model("Employee",employeeSchema)

@@ -8,6 +8,10 @@ const courseInfo=asyncHandler(async(req,res)=>{
     }
 
     try {
+        const existedCourse =await Course.findOne({courseName})
+        if(existedCourse){
+         return res.status(400).json({success:false,message:"Duplicate Course"})
+        }
         const coursedetail=await Course.create({
             startDate,
             courseName,

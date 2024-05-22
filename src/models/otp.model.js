@@ -1,9 +1,8 @@
 import mongoose, { Schema } from "mongoose";
 
 const otpModel = new Schema({
-  user_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+  email: {
+    type:String,
     required: true,
   },
   otp: {
@@ -13,15 +12,10 @@ const otpModel = new Schema({
   timestamp: {
     type: Date,
     default: Date.now,
-    required: true,
-    get: (timestamp) => timestamp.getTime(),
-    set: (timestamp) => new Date(timestamp),
-  },
-  is_verified: {
-    type: Boolean,
-    default: false,
+    // get: (timestamp) => timestamp.getTime(),
+    // set: (timestamp) => new Date(timestamp),
   },
 });
 
 const OTP = mongoose.model("OTP", otpModel);
-export default OTP
+export default OTP;

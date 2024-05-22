@@ -1,8 +1,9 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
-import OTP from "../models/otp.model.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { generateOtp } from "./generateOtp.js";
+import mongoose from "mongoose";
+import OTP from "../models/otp.model.js";
 
 dotenv.config({
   path: "./.env",
@@ -35,13 +36,16 @@ const sendMail = asyncHandler(async (req, res) => {
     text: `Your OTP is :${otp}`, // plain text body
   };
   transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
+    const savetoDb = OTP.create({
+      email,
+      otp,
+    });
+    if (!savetoDb) {
       console.log(error);
-      res.status(500).send("Failed to send OTP." )
-    } else {
-      console.log("Email has been sent succesfully");
-      res.status(200).send( `OTP has been sent to ${email}` );
+      res.status(500).send("Failed to send OTP.");
     }
+    console.log("Email has been sent succesfully");
+    res.status(200).send(`OTP has been sent to ${email}`);
   });
 });
 export { sendMail };

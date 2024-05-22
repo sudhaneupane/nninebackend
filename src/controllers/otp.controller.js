@@ -1,32 +1,31 @@
 import OTP from "../models/otp.model.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { sendMail } from "../services/sendMail.js";
-import { generateOtp } from "../services/generateOtp.js";
 
-const otpInfo = asyncHandler(async (req, res, next) => {
-  const { email } = req.body;
-
+const verifyOtp = asyncHandler(async (req, res) => {
+  let { email, otp } = req.body;
+  otp = Number(otp);
   if (!email) {
-    return res.status(400).json("Email is required");
+    return res.status(400).json("Email is required to send OTP");
   }
-
+  if (!otp) {
+    return res.status(400).json("OTP is required");
+  }
   try {
-    const otp = generateOtp();
-    const otpDetail = await OTP.create({
-      email,
-      timestamp: new Date(),
-      otp,
-    });
+    const savedOtp = await OTP.findOne({ email });
 
-    await sendMail({ email, otp });
-    res.status(200).json("OTP and email saved");
+    if (!savedOtp || savedOtp.otp !== otp) {
+      return res.status(400).json({ error: "Invalid email or OTP" });
+    }
+
+    await savedOtp.deleteOne();
+
+    return res.status(200).json({ message: "Successful" });
   } catch (error) {
     console.error(error);
-    res.status(500).json("An error occurred while sending the OTP");
+    return res
+      .status(500)
+      .json({ error: "An error occurred while verifying the code" });
   }
 });
 
-const verifyOtp = asyncHandler(async () => {});
-
-export { otpInfo, verifyOtp };
-
+export { verifyOtp };

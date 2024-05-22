@@ -48,3 +48,4 @@ const getStudentDetail = asyncHandler(async (req, res) => {
 });
 
 export { studentInfo, getStudentDetail };
+

@@ -1,5 +1,4 @@
 import Enroll from "../../models/enroll.model.js";
-
 //get api::
 const getRegisterDetails = async (req, res) => {
     try {
@@ -11,6 +10,4 @@ const getRegisterDetails = async (req, res) => {
       res.status(500).json({ error: "Internal server error" }); // More specific error message
     }
   };
-  
-
 export {getRegisterDetails}

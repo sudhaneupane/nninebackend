@@ -1,38 +1,47 @@
+// models/enroll.model.js
 'use strict';
-import { DataTypes } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../config/database.js'; // Adjust the path to your database configuration
 
-export default (sequelize) => {
-  const Enrollment = sequelize.define('Enrollment', {
+class Enroll extends Model {
+    // Define associations here if necessary
+    static associate(models) {
+        // associations can be defined here
+    }
+}
+
+Enroll.init({
     email: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false
     },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false
     },
     phone: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-    schoolCollegeName: {
-      type: DataTypes.STRING,
+        type: DataTypes.STRING,
+        allowNull: false
     },
     levelOfEducation: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: true
     },
     courses: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
+        type: DataTypes.JSON,
+        allowNull: false
+    },
+    schoolCollegeName: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     message: {
-      type: DataTypes.TEXT,
+        type: DataTypes.STRING,
+        allowNull: true
     }
-  }, {
-    timestamps: true,
-    tableName: 'enrollments'
-  });
+}, {
+    sequelize,
+    modelName: 'Enroll',
+});
 
-  return Enrollment;
-};
+export default Enroll;

@@ -1,4 +1,4 @@
-import { Enroll } from "../models/enroll.model.js";
+import Enroll from "../../models/enroll.model.js";
 
 //get api::
 const getRegisterDetails = async(req,res)=>{

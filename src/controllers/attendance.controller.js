@@ -1,14 +1,14 @@
-import {Attendance} from '../models/attendance.model.js'
+import Attendance from '../../models/attendance.model.js'
 import {asyncHandler} from '../utils/asyncHandler.js'
 
 const attendanceRecord=asyncHandler(async(req,res)=>{
-const {date,employee,time,student,status,comments,duration}=req.body
+const {date,employeeId,time,studentId,status,comments,duration}=req.body
     try {
     const attendInfo=await Attendance.create({
         date,
-        employee,
+        employeeId,
         time,
-        student,
+        studentId,
         status,
         comments,
         duration
@@ -40,14 +40,13 @@ const getAttendanceRecordByStudent = async(req,res)=>{
 
 const getAttendanceRecord=asyncHandler(async(req,res)=>{
     try {
-        const getRecord=await Attendance.find({})
+        const getRecord=await Attendance.findAll({})
         res.status(201).json(getRecord)
     } catch (error) {
         console.log(error);
         res.status(500).json("Error retrieving attendance record")
     }
 })
-
 export {
     attendanceRecord,
     getAttendanceRecord

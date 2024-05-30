@@ -1,4 +1,4 @@
-import {Course} from '../models/course.model.js'
+import Course from '../../models/course.model.js'
 import { asyncHandler } from '../utils/asyncHandler.js'
 
 const courseInfo=asyncHandler(async(req,res)=>{
@@ -30,7 +30,7 @@ const getCourseDetails =async(req,res)=>{
     //send in response
     try {
         console.log('route entered');
-        const courseData = await Course.findOne({});
+        const courseData = await Course.findAll({});
         console.log(courseData);
         res.status(200).json(courseData)
     } catch (error) {

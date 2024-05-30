@@ -1,4 +1,4 @@
-import { Student } from "../models/student.model.js";
+import Student from "../../models/student.model.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
 const studentInfo = asyncHandler(async (req, res) => {
@@ -53,7 +53,7 @@ const getStudentByCourse = async(req,res)=>{
 }
 const getStudentDetail = asyncHandler(async (req, res) => {
   try {
-    const studentDetail = await Student.find({});
+    const studentDetail = await Student.findAll({});
     res.status(200).json(studentDetail);
   } catch (error) {
     console.log(error);

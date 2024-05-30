@@ -1,6 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../config/database.js'; // Import your Sequelize instance
-
 class Student extends Model {
   static associate(models) {
     // associations can be defined here

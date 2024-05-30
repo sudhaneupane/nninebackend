@@ -1,4 +1,4 @@
-import {Employee} from '../models/employee.model.js'
+import Employee from '../../models/employee.model.js'
 import { asyncHandler } from '../utils/asyncHandler.js'
 
 const employeedata = asyncHandler(async(req,res)=>{
@@ -22,7 +22,7 @@ const employeedata = asyncHandler(async(req,res)=>{
 const getEmployeeData=async(req,res)=>{
     try {
         // console.log("get router invoked");
-        const getdata=await Employee.find({})
+        const getdata=await Employee.findAll({})
         res.status(200).json(getdata)
     } catch (error) {
         console.log(error);

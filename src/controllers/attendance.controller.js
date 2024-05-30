@@ -1,4 +1,4 @@
-// import {Attendance} from '../models/attendance.model.js'
+// import Attendance from '../../models/attendance.model.js'
 // import {asyncHandler} from '../utils/asyncHandler.js'
 
 // const attendanceRecord=asyncHandler(async(req,res)=>{
@@ -34,7 +34,7 @@
 
 // const getAttendanceRecord=asyncHandler(async(req,res)=>{
 //     try {
-//         const getRecord=await Attendance.find({})
+//         const getRecord=await Attendance.findAll({})
 //         res.status(201).json(getRecord)
 //     } catch (error) {
 //         console.log(error);

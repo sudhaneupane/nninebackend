@@ -1,8 +1,14 @@
-import { DataTypes } from 'sequelize';
-import sequelize from 'sequelize'; // Import your Sequelize instance
+'use strict'
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';// Import your Sequelize instance
 
-const CourseModel = (sequelize) => {
-  const Course = sequelize.define('Course', {
+class Course extends Model {
+  // Define associations here if necessary
+  static associate(models) {
+      // associations can be defined here
+  }
+}
+Course.init({
     startDate: {
       type: DataTypes.STRING, // Adjust data type as needed for PostgreSQL
       allowNull: false,
@@ -20,11 +26,7 @@ const CourseModel = (sequelize) => {
       allowNull: false,
     }
   }, {
-    tableName: 'courses', // Adjust the table name as needed
-    timestamps: false // Adjust as needed, true if you want timestamps
+    sequelize,
+    modelName: 'Course', // Adjust as needed, true if you want timestamps
   });
-
-  return Course;
-};
-
-export default CourseModel;
+export default Course;

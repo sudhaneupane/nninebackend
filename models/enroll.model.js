@@ -11,6 +11,11 @@ class Enroll extends Model {
 }
 
 Enroll.init({
+    id:{
+        type:DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement:true,
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: false

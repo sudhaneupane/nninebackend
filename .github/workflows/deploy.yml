@@ -1,0 +1,44 @@
+
+name: nnine deploy
+
+on:
+  pull_request:
+    branches:
+      - "main"
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build-upload:
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Check if Docker is available
+        run: which docker
+        
+      - name: Build backend Docker image
+        run: docker build -t nninebackend:$(git log -1 --pretty=format:%h) ./nninebackend
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Tag Docker image
+        run: |
+          docker tag nninebackend:$(git log -1 --pretty=format:%h) ${{ secrets.DOCKERHUB_REPO }}:$(git log -1 --pretty=format:%h)
+
+      - name: Push Docker image
+        run: docker push ${{ secrets.DOCKERHUB_REPO }}:$(git log -1 --pretty=format:%h)
+

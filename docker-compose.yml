@@ -1,0 +1,30 @@
+version: '3'
+services:
+  nnine:
+    container_name: be
+    build: ./backend
+    environment:
+      - PORT=8000
+        #- MONGO_URI=mongodb://mongodb:27017/nimto  # Update the connection URI here
+      - MONGODB_URI=mongodb://nimtoadmin:changeme@mongodb:27017/nimto
+    ports:
+      - '8001:8000'
+    depends_on:
+      - postgres
+    volumes:
+      - ./.env_backend:/app/.env  # Map .env_backend to .env in the container
+    restart: always  # Restart policy for backend service
+
+  mongodb:
+    container_name: db
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: nimtoadmin
+      MONGO_INITDB_ROOT_PASSWORD: changeme
+      MONGO_INITDB_DATABASE: nimto
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-data:/data/db
+      - ./mongo-init-scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro  # Mount the init script directory
+    restart: always  # Restart policy for MongoDB service

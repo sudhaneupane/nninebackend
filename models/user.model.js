@@ -1,18 +1,30 @@
-// import mongoose from 'mongoose'
-// import bcrypt from 'bcrypt'
-// const userModel = mongoose.Schema({
-//     email:{
-//         type:String,
-//         unique:true,
-//     },
-//     password:{
-//         type:String,
+// import { Model, DataTypes } from 'sequelize'
+// import sequelize from '../config/database'
+// class User extends Model {
+//     static associations(model) {
+
 //     }
-// })
-// userModel.pre("save",async function (next){
-//     if(!this.isModified("password")) return next();
-//     this.password = await bcrypt.hash(this.password,10)
-//     next()
-// })
-// const User = mongoose.model('User',userModel)
+// }
+
+// User.init({
+//     id: {
+//         type: DataTypes.INTEGER,
+//         autoIncrement: true,
+//         primaryKey: true,
+//     },
+//     email: {
+//         type: DataTypes.STRING,
+//         allowNull: false,
+//     },
+//     password: {
+//         type: DataTypes.STRING,
+//         allowNull: false,
+//     },
+// },
+//     {
+//         sequelize,
+//         modelName: "User"
+
+//     })
+
 // export default User

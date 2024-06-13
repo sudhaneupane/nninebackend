@@ -17,6 +17,7 @@ import employeeRouter from './router/employee.router.js'
 import studentRouter from './router/student.router.js'
 import courseRouter from './router/course.router.js'
 import attendanceRouter from './router/attendance.router.js'
+import quizRouter from './router/quiz.router.js'
 
 //router declaration ::
 app.use('/api/v1/enrollment',enrollUser)
@@ -26,9 +27,10 @@ app.use('/api/v1/employee',employeeRouter)
 app.use('/api/v1/student',studentRouter)
 app.use('/api/v1/course',courseRouter)
 app.use('/api/v1/attendance',attendanceRouter)
+app.use('/api/v1/quiz',quizRouter)
 
 // routes declaration
 app.use('/',(req,res)=>{
-    res.send("this is main hai")
+    res.send("OK")
 })
 export {app}

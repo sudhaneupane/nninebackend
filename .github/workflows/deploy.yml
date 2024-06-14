@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   deploy:
@@ -18,9 +18,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-       - name: Deploy to Ubuntu Server
-    run: |
-       ssh -o StrictHostKeyChecking=no ubuntu@ip-172-26-6-140 << 'EOF'
+      - name: Deploy to Ubuntu Server
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@ip-172-26-6-140 << 'EOF'
             cd /home/ubuntu/nninebackend
             git pull origin main
             npm install

@@ -2,7 +2,6 @@ import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { generateOtp } from "./generateOtp.js";
-import mongoose from "mongoose";
 import OTP from "../models/otp.model.js";
 
 dotenv.config({

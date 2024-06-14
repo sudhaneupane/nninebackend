@@ -27,3 +27,7 @@ jobs:
             pm2 stop nninebackend || true
             pm2 start npm --name "nninebackend" -- run dev
           EOF
+
+
+
+          # env

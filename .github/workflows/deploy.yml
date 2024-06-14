@@ -20,10 +20,10 @@ jobs:
 
        - name: Deploy to Ubuntu Server
     run: |
-      ssh -o StrictHostKeyChecking=no user@your.server.ip << 'EOF'
-        cd /path/to/your/project
-        git pull origin main
-        npm install
-        pm2 stop all || true
-        pm2 start npm --name "nninebackend" -- run dev
-      EOF
+       ssh -o StrictHostKeyChecking=no ubuntu@ip-172-26-6-140 << 'EOF'
+            cd /home/ubuntu/nninebackend
+            git pull origin main
+            npm install
+            pm2 stop nninebackend || true
+            pm2 start npm --name "nninebackend" -- run dev
+          EOF

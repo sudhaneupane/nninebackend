@@ -1,0 +1,535 @@
+[33mcommit f229aed36b65e4dd5e95e94ae496f0ef33195dfb[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 115138d 121e5b1
+Author: Mingtindu Sherpa <104809627+Mingtindu@users.noreply.github.com>
+Date:   Fri May 31 08:01:43 2024 +0545
+
+    Merge pull request #9 from sudhaneupane/dev
+    
+    feat: DB connection check
+
+[33mcommit 121e5b10a0cb66f5b362ac4777e20f991e2bd70a[m[33m ([m[1;31morigin/dev[m[33m)[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Fri May 31 07:56:13 2024 +0545
+
+    feat: DB connection check
+
+[33mcommit 115138d9c9e34510effb44040f68ef99fc99a8ca[m
+Merge: d7687e6 e954a25
+Author: Mingtindu Sherpa <104809627+Mingtindu@users.noreply.github.com>
+Date:   Thu May 30 20:15:05 2024 +0545
+
+    Merge pull request #8 from sudhaneupane/dev
+    
+    Dev
+
+[33mcommit e954a25e3e7dd7eb15d2aaddfecbee297ccf7e1a[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu May 30 19:21:32 2024 +0545
+
+    Refactor: Attendance API
+
+[33mcommit 8e30c3e59087073529502191d5b2f9bb9b0fa3de[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu May 30 17:57:15 2024 +0545
+
+    Refactor: Employee API
+
+[33mcommit 0fe52a6020546e6d5b0cec3c7b323d4e58cc992b[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu May 30 15:26:02 2024 +0545
+
+    refactor: Student API
+
+[33mcommit 26e32fe100c688793dc0349e4173b401f6f6c8be[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu May 30 11:49:05 2024 +0545
+
+    Refactor: Course API
+
+[33mcommit 8ca5112af6d0e1091513f08ed9d321ab277aae26[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu May 30 11:44:28 2024 +0545
+
+    fixed:findAll
+
+[33mcommit ae153683ca8f63cf4405c8da2710cd5e2e42584b[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu May 30 11:22:26 2024 +0545
+
+    Refactor: Get enroll data
+
+[33mcommit c8a658509b1e94b5dddedd96dbc357747489e53a[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu May 30 11:17:17 2024 +0545
+
+    Refactor: Enroll User Done
+
+[33mcommit e23f43e9fce6c07fb97b78cd8a823c2b98c192f0[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Tue May 28 14:05:44 2024 +0545
+
+    Refactor: 4 mongo model to postgres
+
+[33mcommit aebbcc03e1dfef82b0b0a8b2a412660d10474173[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 27 21:24:57 2024 +0545
+
+    Refactor:Postgress connection in backend
+
+[33mcommit d7687e6f9bcb1925dfac72875aca8b2efe21f5e6[m
+Merge: ad392a1 fe0d310
+Author: Mingtindu Sherpa <104809627+Mingtindu@users.noreply.github.com>
+Date:   Mon May 27 16:14:19 2024 +0545
+
+    Merge pull request #7 from sudhaneupane/backend
+    
+    Update
+
+[33mcommit fe0d310c6f555bd34b872f452d94188b61e882bd[m[33m ([m[1;31morigin/backend[m[33m)[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 27 16:04:18 2024 +0545
+
+    Update
+
+[33mcommit ad392a1a7b8df92a901ae058b12ceac0f33aeda3[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 22 23:31:17 2024 +0545
+
+    feat:get student by courseId
+
+[33mcommit 2555924ba201230e9e6b3b70ea259df5960b7244[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 22 22:33:00 2024 +0545
+
+    feat: duplicate course no register
+
+[33mcommit 363613726b70374d609658bc6739a996b7f6413b[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 22 22:19:31 2024 +0545
+
+    Update:Student model and student controller
+
+[33mcommit f0cd4546dba25789a5306c4a9aea538c4d43e543[m
+Merge: 87dfc7d b0c2fe4
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 22 21:23:36 2024 +0545
+
+    t Merge branch 'main' of https://github.com/sudhaneupane/nninebackend
+
+[33mcommit 87dfc7d710e0c58ddf333424eaa7fdc229f2b2a2[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 22 21:23:13 2024 +0545
+
+    Update: Endpoint name change
+
+[33mcommit b0c2fe4f584892596b944cec05e17be7e96ab53b[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Wed May 22 16:58:14 2024 +0545
+
+    few fixes
+
+[33mcommit 0afac1140952fbfbbd87b3e8ebad2bc14d99cddd[m
+Merge: 9c995b9 0b1e7d0
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Wed May 22 16:38:46 2024 +0545
+
+    Merge branch 'main' of https://github.com/sudhaneupane/nninebackend
+
+[33mcommit 9c995b9eac7ea90d66f45a8703d52ccb1f29a27c[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Wed May 22 16:38:13 2024 +0545
+
+    otp verification
+
+[33mcommit 0b1e7d0aada497c4570ca9a7501a7bb66bb01557[m
+Merge: 0cf1a86 e78e112
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 22 15:17:30 2024 +0545
+
+    Updated code
+
+[33mcommit e78e112ee51b8ebf47568a6b7267ccf98afd6885[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Wed May 22 15:03:31 2024 +0545
+
+    otp send and saved in db
+
+[33mcommit 8e0dbe9b93b9eced1025005895bdad7722db346d[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Tue May 21 16:15:20 2024 +0545
+
+    otp generation and send
+
+[33mcommit 829c71b3e6cf05aed304c11ab19143386b37ed2e[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Thu May 16 12:55:21 2024 +0545
+
+    attendance controller & router
+
+[33mcommit ff9f39d187f0042eb0c5be08cbc661b5b25ae255[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Thu May 16 11:53:00 2024 +0545
+
+    student controller
+
+[33mcommit 0cf1a864f3fadab421e873806c5412be18fbfaec[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 15 17:12:31 2024 +0545
+
+    merging
+
+[33mcommit 01b3ee40bcf87a55a39abc7e961e533ccdf530f4[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Wed May 15 15:14:21 2024 +0545
+
+    employee controller update
+
+[33mcommit 7886500c2e858b10d8e808f1ae993155c8f6dfb5[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Tue May 14 16:33:35 2024 +0545
+
+    employee fetch
+
+[33mcommit 0291108def4e2d2113c6b8be7f49a6489f1e3fe8[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Tue May 14 16:05:26 2024 +0545
+
+    course fetched
+
+[33mcommit 2de255bf7a1af1251879bd5b73adf547c1d612e5[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Tue May 14 15:16:45 2024 +0545
+
+    course controller
+
+[33mcommit cefb8b2e7fa444686bb2f6d07b0ceb5604b1af3c[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Tue May 14 13:00:45 2024 +0545
+
+    employee controller
+
+[33mcommit 2468ba29819e627dabc2ce2eb3f0d49c2f1e2321[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Sun May 12 22:04:56 2024 +0545
+
+    student controller code added
+
+[33mcommit ff3d2bb58ce05a9053dd396879a13042a8bfa150[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Sun May 12 22:03:38 2024 +0545
+
+    emplyee controller code added
+
+[33mcommit f64f7257ac75ed9dd8ac0a05101412957363dc0e[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Fri May 10 12:28:08 2024 +0545
+
+    feat: Different models created
+
+[33mcommit 28b04c6578129f9a5035c694360a4e2128018655[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu May 9 11:46:21 2024 +0545
+
+    user login code reviewed
+
+[33mcommit 55dbad1eb143f25355f231e1c89141c1e5b1f5e7[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 8 22:27:18 2024 +0545
+
+    User registration and Login API for admin
+
+[33mcommit d416c79902fc479329cbe62fbf058151354117d8[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed May 8 15:14:44 2024 +0545
+
+    feat:API for fetching register details
+
+[33mcommit cc4189bbe9f707ac805e2b99d38ece24cc25f718[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Tue May 7 12:20:14 2024 +0545
+
+    testing
+
+[33mcommit 6b86971de2dcc58f1cb5ee4835988a18ef078dda[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 22:53:03 2024 +0545
+
+    testing
+
+[33mcommit 4eebd7e8699f23f2342c71b5f49229db061a825a[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 22:48:20 2024 +0545
+
+    testing
+
+[33mcommit 3e16d7300d78c7f763985faf0c127206cc716220[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 22:34:17 2024 +0545
+
+    testing
+
+[33mcommit d00674bdee54c5326faa647e235239e1512a12db[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 22:28:59 2024 +0545
+
+    testing
+
+[33mcommit 2fe36c79ec45ac202a52b765bc154dbc430ad877[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 22:22:37 2024 +0545
+
+    testing
+
+[33mcommit b382878d86a5f51da050ce72d0325a83c3a9933d[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 22:06:15 2024 +0545
+
+    testing
+
+[33mcommit a72404eccf5fca36dcdd5e96ddd14448bd94e452[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 21:54:43 2024 +0545
+
+    testing
+
+[33mcommit 6010155f2157cfe54bf7a7dff1a7df961bafd859[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 16:07:44 2024 +0545
+
+    testing
+
+[33mcommit bedae8f027abb2834364b7b1de6409c53eff9c2b[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 15:23:53 2024 +0545
+
+    testing
+
+[33mcommit 5980b03be625b7a43e6185c8a140511cbb38eab1[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 15:17:39 2024 +0545
+
+    testing
+
+[33mcommit d7fa62a14a7762ae556e4946883e216392e97a8c[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 14:55:12 2024 +0545
+
+    testing
+
+[33mcommit 34febb69e2679ba76577cf6adb9eb1ed7ab4fb1b[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon May 6 13:17:31 2024 +0545
+
+    feat: Litttle change
+
+[33mcommit 77e9e008fad4cd739045a911323c5d7d83dfc4e4[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon Apr 29 18:33:42 2024 +0545
+
+    feat:build script added
+
+[33mcommit 8cad3478c2ffbb68e51c8af89a57ff10c30f9c49[m
+Merge: 76e25fd bc3eb9b
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Mon Apr 29 18:27:04 2024 +0545
+
+    merged
+
+[33mcommit bc3eb9bddffeb471eaeba60425142e2c15773ecd[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Mon Apr 29 16:38:09 2024 +0545
+
+    controllers & models modified
+
+[33mcommit fe55217da4e0da76a4dbd900fc6da94b1fbba836[m
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Sun Apr 28 09:06:01 2024 +0545
+
+    Update node.js.yml
+
+[33mcommit bec389e48a0d5eb0ece4b68db8244abd8c4cd8c3[m
+Merge: 9bccf8c 5a90d0a
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Sun Apr 28 08:59:29 2024 +0545
+
+    Merge branch 'main' of https://github.com/sudhaneupane/nninebackend
+
+[33mcommit 9bccf8c79fe7b1f3e51f3c465c70b14c3a6c2ebf[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Sun Apr 28 08:58:52 2024 +0545
+
+    controller update
+
+[33mcommit 5a90d0a7b4a3aba8c080696132bf7c96402254f7[m
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Fri Apr 26 13:41:36 2024 +0545
+
+    Update node.js.yml
+
+[33mcommit 3507ed12d4bc5f56113fa750236b5214cf340633[m
+Merge: 744e033 eba106c
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Fri Apr 26 13:38:05 2024 +0545
+
+    Merge branch 'main' of https://github.com/sudhaneupane/nninebackend
+
+[33mcommit 744e0339f2ffd7bdf8d9c88c0ac7a56876b87fec[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Fri Apr 26 13:37:25 2024 +0545
+
+    db update
+
+[33mcommit eba106c2b2be5ccea3b34eaaea7c031dd38b4aad[m
+Merge: 71f072a 54737ab
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Fri Apr 26 13:23:52 2024 +0545
+
+    Merge pull request #3 from sudhaneupane/sudhaneupane-patch-1
+    
+    Create node.js.yml
+
+[33mcommit 54737ab9a9a1e3881553ab55cdce167c2b9b60bc[m
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Fri Apr 26 13:09:58 2024 +0545
+
+    Update node.js.yml
+
+[33mcommit 864df6440e623a715be110dcea62a4c534e13d7f[m
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Fri Apr 26 13:05:22 2024 +0545
+
+    Update node.js.yml
+
+[33mcommit 14808b214464a49441e59093990d3c521ccaf64a[m
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Fri Apr 26 12:59:50 2024 +0545
+
+    Create node.js.yml
+
+[33mcommit 71f072a794845b22c519cf86ebc8c8f9fc2aefa5[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Fri Apr 26 12:58:16 2024 +0545
+
+    controller and router added
+
+[33mcommit de23594f420978b4a610738cf4a47609bc5087f5[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Fri Apr 26 10:46:57 2024 +0545
+
+    asynchandler exported
+
+[33mcommit a5b54c14ddbe5034962ff85121952f273e37a789[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Fri Apr 26 10:45:28 2024 +0545
+
+    async handler added
+
+[33mcommit 76e25fdbeaf3aefff5eefa1c4fd9024f3134e11b[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Thu Apr 25 15:23:46 2024 +0545
+
+    feat: Course router created
+
+[33mcommit d2745cd56095119993c53786a966f72ea7b64ac5[m
+Merge: e2f04f2 f5bc0bb
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 13:32:48 2024 +0545
+
+    feat :Dockerfile added
+
+[33mcommit e2f04f2b44b72fbe3d3d852bc6494ba8b36831be[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 12:57:53 2024 +0545
+
+     feat:Dockerfile added
+
+[33mcommit f5bc0bb7200824272e50e0af6fa545ee43b17887[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Wed Apr 24 12:29:09 2024 +0545
+
+    index add
+
+[33mcommit e83de994b757ceb1e8f41015a440fd6471cf3fda[m
+Merge: 68fe6cf 1f1ed4f
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Wed Apr 24 12:10:19 2024 +0545
+
+    Merge pull request #2 from sudhaneupane/feature1
+    
+    index.js file added
+
+[33mcommit 1f1ed4f393d45d9610f861e3558c24d2f31b7976[m
+Merge: 9832e0e 68fe6cf
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Wed Apr 24 12:10:00 2024 +0545
+
+    Merge branch 'main' into feature1
+
+[33mcommit 9832e0ef65b1d5ef9cdadd3e7d67473cb6e80da3[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Wed Apr 24 12:07:32 2024 +0545
+
+    index.js file added
+
+[33mcommit 68fe6cf3372838d64d0acaec5cae3ceeb0a9d431[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 10:51:44 2024 +0545
+
+    feat: Enroll model created
+
+[33mcommit 8971092239914516a216e00e039393b0d44f9a2b[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 07:54:46 2024 +0545
+
+    feat: files added
+
+[33mcommit 708bc714efbf580b4a3649e5774c2b0001a03c36[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 07:52:05 2024 +0545
+
+    feat: .env file sample added
+
+[33mcommit fb44ca982a781167f1ac7322699a56167c2d973e[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 07:51:16 2024 +0545
+
+    feat : DB connection aded
+
+[33mcommit 8b4a6ee1019f7fc1cc06b020b7531152ff9443b2[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 07:50:30 2024 +0545
+
+    feat: index file configured
+
+[33mcommit de872868ea1b48fb137ebb1208c2a7400a6b6585[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 07:49:27 2024 +0545
+
+    feat: Database name added
+
+[33mcommit adf0a1695a5303227924f286ac2b76253492eaac[m
+Author: Mingtindu <mingmartu@gmail.com>
+Date:   Wed Apr 24 07:48:31 2024 +0545
+
+    feat: express app created
+
+[33mcommit a3b4328e69e575411b956fadd90f04655e22a618[m
+Merge: 37335e4 1a987ed
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Tue Apr 23 20:57:55 2024 +0545
+
+    Merge pull request #1 from sudhaneupane/feature1
+    
+    initial setup
+
+[33mcommit 1a987ed8373537c4c502eba692e2c1b80f0f616e[m
+Author: Sudha <sudaneupane.11@gmail.com>
+Date:   Tue Apr 23 20:55:35 2024 +0545
+
+    initial setup
+
+[33mcommit 37335e4c1ae3cbc4f583cd32bb63aedca7c1026c[m
+Author: Sudha Neupane <97887004+sudhaneupane@users.noreply.github.com>
+Date:   Tue Apr 23 20:21:50 2024 +0545
+
+    Initial commit

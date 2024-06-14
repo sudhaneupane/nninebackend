@@ -29,6 +29,6 @@ app.use('/api/v1/attendance',attendanceRouter)
 
 // routes declaration
 app.use('/',(req,res)=>{
-    res.send("this is main hai")
+    res.send("OK")
 })
 export {app}

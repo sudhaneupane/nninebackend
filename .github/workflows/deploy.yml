@@ -35,8 +35,6 @@ jobs:
     
           echo "Starting new PM2 process..."
           ./node_modules/.bin/pm2 start npm --name "nninebackend" -- run dev
-
-          pm2 logs
           EOF
 #11
 #update

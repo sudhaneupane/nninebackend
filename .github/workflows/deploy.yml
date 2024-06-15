@@ -28,18 +28,13 @@ jobs:
           echo "Installing npm packages..."
           npm install
           
-          # Ensure pm2 is installed
-          if ! command -v pm2 &> /dev/null
-          then
-            echo "PM2 not found, installing..."
-            npm install -g pm2
-          fi
-          
+          npm install pm2
+    
           echo "Stopping existing PM2 process if it exists..."
-          pm2 stop nninebackend || true
-          
+          ./node_modules/.bin/pm2 stop nninebackend || true
+    
           echo "Starting new PM2 process..."
-          pm2 start npm --name "nninebackend" -- run dev
+          ./node_modules/.bin/pm2 start npm --name "nninebackend" -- run dev
           EOF
 #11
 #update

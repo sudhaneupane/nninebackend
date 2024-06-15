@@ -33,6 +33,6 @@ app.use("/api/v1/quiz", quizRouter);
 
 // routes declaration
 app.use('/',(req,res)=>{
-    res.send("OK")
+    res.send("🆗")
 })
 export {app}

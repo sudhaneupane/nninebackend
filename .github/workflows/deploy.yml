@@ -40,7 +40,7 @@ jobs:
           
           echo "Starting new PM2 process..."
           pm2 start npm --name "nninebackend" -- run dev
-        EOF
+          EOF
 #11
 #update
 #nvm install

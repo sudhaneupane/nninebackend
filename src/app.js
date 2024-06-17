@@ -32,7 +32,7 @@ app.use("/api/v1/attendance", attendanceRouter);
 app.use("/api/v1/quiz", quizRouter);
 
 // routes declaration
-app.use("/", (req, res) => {
-  res.send("OK");
-});
-export { app };
+app.use('/',(req,res)=>{
+    res.send("🆗")
+})
+export {app}

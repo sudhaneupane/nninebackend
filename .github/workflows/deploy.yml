@@ -22,12 +22,21 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@50.17.46.99 << 'EOF'
             cd /home/ubuntu/nninebackend
-            git pull origin main
-            npm install
-            pm2 stop nninebackend || true
-            pm2 start npm --name "nninebackend" -- run dev
+            echo "Pulling latest code from origin main..."
+          git pull origin main
+          
+          echo "Installing npm packages..."
+          npm install
+          
+          npm install pm2
+    
+          echo "Stopping existing PM2 process if it exists..."
+          ./node_modules/.bin/pm2 stop nninebackend || true
+    
+          echo "Starting new PM2 process..."
+          ./node_modules/.bin/pm2 start npm --name "nninebackend" -- run dev
           EOF
 #11
 #update
 #nvm install
-#pm2 added
+

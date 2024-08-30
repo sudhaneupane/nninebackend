@@ -1,40 +1,52 @@
-'use strict';
-import { Model, DataTypes } from "sequelize";
-import sequelize from "../config/database.js"; // Import your Sequelize instance
+"use strict";
 
-class Employee extends Model {
+import { Model, DataTypes } from "sequelize";
+import sequelize from "../config/database.js";
+
+class Schedule extends Model {
   // Define associations here if necessary
   static associate(models) {
-    // associations can be defined here
+    //associations can define here
   }
 }
-Employee.init(
+Schedule.init(
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    name: {
+    CourseID: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
+
+    ScheduleID: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    phone: {
-      type: DataTypes.STRING,
+
+    ClassDate: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
-    address: {
+    StartTime: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
+    EndTime: {
+      type: DataTypes.TIME,
+      allowNull: false,
+    },
+
+    InstructorID: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
   {
     sequelize,
-    modelName: "Employees",
+    modelName: "Schedule",
   }
 );
-export default Employee;
+export default Schedule;

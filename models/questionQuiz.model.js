@@ -2,14 +2,14 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/database.js'; // Adjust the path to your database configuration
 
-class QuizQuestion extends Model {
+class Question extends Model {
     // Define associations here if necessary
     static associate(models) {
         // associations can be defined here
     }
 }
 
-QuizQuestion.init({
+Question.init({
     id:{
         type:DataTypes.INTEGER,
         primaryKey:true,
@@ -29,4 +29,4 @@ QuizQuestion.init({
     modelName: 'Question',
 });
 
-export default QuizQuestion;
+export default Question;

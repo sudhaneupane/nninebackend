@@ -31,6 +31,12 @@ thunderclient post format for attendance
 }
 */
 })
+const getAttendanceRecordByEmployee = async(req,res)=>{
+    
+}
+const getAttendanceRecordByStudent = async(req,res)=>{
+    
+}
 
 const getAttendanceRecord=asyncHandler(async(req,res)=>{
     try {

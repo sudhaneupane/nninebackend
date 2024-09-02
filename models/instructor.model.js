@@ -11,6 +11,11 @@ class Instructor extends Model {
 
 Instructor.init(
   {
+    id: {
+      type: DataTypes.STRING,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     Name: {
       type: DataTypes.STRING, //adjust datatypes as per database requirement
       allowNull: false,

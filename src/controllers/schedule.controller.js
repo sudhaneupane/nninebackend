@@ -1,85 +1,117 @@
 import Schedule from "../../models/schedule.model.js";
+// import {
+//   fetchCourseApi,
+//   fetchInstructorApi,
+// } from "../services/api.services.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
-const scheduleData = asyncHandler(async (req, res) => {
-  const {
-    CourseID,
-    ScheduleData,
-    ClassDate,
-    StartTime,
-    EndTime,
-    InstructorID,
-  } = req.body;
+//creating the schedule..
+const createSchedule = asyncHandler(async (req, res) => {
+  //here we destructing
+  const { CourseId, InstructorId, ClassDate, StartTime, EndTime } = req.body;
+
   if (
-    ![
-      CourseID,
-      ScheduleData,
-      ClassDate,
-      StartTime,
-      EndTime,
-      InstructorID,
-    ].every((field) => typeof field === "string" && field.trim() !== "")
+    ![CourseId, InstructorId, ClassDate, StartTime, EndTime].every(
+      (field) => typeof field === "string" && field.trim() !== ""
+    )
   ) {
-    return res
-      .status(400)
-      .json({ success: false, message: "All field are required" });
+    res.status(400).json({ message: "could not found" });
   }
   try {
     const schedule = await Schedule.create({
-      CourseID,
-      ScheduleData,
+      CourseId,
+      InstructorId,
       ClassDate,
       StartTime,
       EndTime,
-      InstructorID,
     });
-    res.status(201).json({ message: "Data created successfully" });
+    res.status(200).json({ message: "Schedule created successfully" });
+    // console.log(schedule);
   } catch (error) {
-    console.log(error);
-    res
-      .status(500)
-      .json({ message: "An error occurred while creating the data" });
+    console.log(error); // for error
+    res.status(400).json({ message: "Schedule could not created" });
   }
 });
 
-const getScheduleData = async (req, res) => {
+const getAllSchedule = asyncHandler(async (req, res) => {
   try {
-    const scheduleData = await Schedule.findAll({});
-    res.status(200).json(scheduleData);
-  } catch (error) {}
-};
-
-const updateSchedule = async (req, res) => {
-  const { id } = req.params;
-  const { StartTime, EndTime } = req.body;
-  try {
-    //find the user by ID
-    const schedule = await Schedule.findByPk(id);
-    if (!schedule) {
-      return res.status(400).json({ message: "schedule is not correct" });
-    }
-
-    //update the user
-    Schedule.StartTime = StartTime || Schedule.StartTime;
-    Schedule.EndTime = EndTime || Schedule.EndTime;
-    //save changes to  the database
-    await Schedule.save();
-
-    //send the response
-
-    res.status(200).json({ message: "Schedule updated successfully" });
-  } catch (error) {
+    const schedule = await Schedule.findAll({});
     res
-      .status(500)
-      .json({ message: "An error occurred while updating the schedule" });
+      .status(200)
+      .json({ result: schedule, message: "schedule read successfully" });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+const getSpecificSchedule = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const schedule = await Schedule.findByPk(id);
+
+    if (!schedule) {
+      return res.status(400).json({ message: "Could not found schedule" });
+    } else {
+      res.status(200).json({ message: "Schedule get successfully" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Schedule read unsuccessful" });
   }
 };
 
-const deleteSchedule = async (req, res) => {
-  const { id } = req.params;
-  const schedule =await Schedule.findByPk(id)
-  await schedule.destroy();
-  
-};
+const updateSchedule = asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const { CourseId, InstructorId, ClassDate, StartTime, EndTime } = req.body;
 
-export { scheduleData, getScheduleData, updateSchedule };
+  try {
+    const schedule = await Schedule.findByPk(id);
+
+    if (!schedule) {
+      return res.status(400).json({ message: "could not found" });
+    } else {
+      //update the schedule here..
+      schedule.ClassDate = ClassDate || schedule.ClassDate;
+      schedule.StartTime = StartTime || schedule.StartTime;
+      schedule.EndTime = EndTime || schedule.EndTime;
+      schedule.CourseId = CourseId || schedule.CourseId;
+      schedule.InstructorId = InstructorId || schedule.InstructorId;
+
+      //save the changes
+
+      await schedule.save();
+
+      //send the response
+
+      res.status(200).json({ message: "Schedule updated successfully" });
+    }
+  } catch (error) {
+    res.status(400).json({ message: "Schedule update unsuccessful" });
+  }
+});
+
+//delete
+const deleteSchedule = asyncHandler(async (req, res) => {
+  let id = req.params.id;
+
+  try {
+    const schedule = await Schedule.findByPk(id);
+
+    if (!schedule) {
+      return res.status(400).json({ message: "could not found" });
+    } else {
+      await schedule.destroy();
+      res.status(200).json({ message: "Schedule deleted successfully" });
+    }
+  } catch (error) {
+    res.status(400).json({ message: "Schedule delete unsuccessful" });
+  }
+});
+
+export {
+  createSchedule,
+  getAllSchedule,
+  getSpecificSchedule,
+  updateSchedule,
+  deleteSchedule,
+};

@@ -2,7 +2,7 @@ import { Model, DataTypes } from "sequelize";
 import sequelize from "../config/database.js"; // Import your Sequelize instance
 
 class Course extends Model {
-  // Define associations here if necessary
+  // Define associations here if necessary  
   static associate(models) {
     // associations can be defined here
   }

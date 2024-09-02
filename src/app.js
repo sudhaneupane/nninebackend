@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+// import bodyParser from "body-parser";
 const app = express(); //created express app::
 app.use(
   cors({
@@ -8,14 +9,15 @@ app.use(
   })
 );
 app.use(express.json({ limit: "20kb" }));
+// app.use(bodyParser.json());
 
 app.use(express.static("public"));
 import dashboardRouter from "./router/dashboard.router.js";
 import studentRouter from "./router/student.router.js";
 import courseRouter from "./router/course.router.js";
 import attendanceRouter from "./router/attendance.router.js";
-import scheduleRouter from "./router/schedule.router.js";
 import instructorRouter from "./router/instructor.router.js";
+import scheduleRouter from "./router/schedule.router.js";
 // import quizRouter from "./router/quiz.router.js";
 
 app.use("/api/v1/dashboards", dashboardRouter);
@@ -28,7 +30,7 @@ app.use("/api/v1/instructors", instructorRouter);
 app.use("/api/v1/schedules", scheduleRouter);
 // routes declaration
 
-app.use("/", (req, res) => {
-  res.send("🆗");
-});
+// app.use("/", (req, res) => {
+//   res.send("🆗");
+// });
 export { app };

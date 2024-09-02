@@ -1,15 +1,18 @@
-import { Router } from "express";
+import { getSpecificCourse } from "../controllers/course.controller.js";
 import {
-  getScheduleData,
-  scheduleData,
+  createSchedule,
+  deleteSchedule,
+  getAllSchedule,
+  getSpecificSchedule,
   updateSchedule,
 } from "../controllers/schedule.controller.js";
+import { Router } from "express";
 
 const scheduleRouter = Router();
-
-// Define route for updating the schedule
-scheduleRouter.route("/").post(scheduleData).get(getScheduleData);
-
-scheduleRouter.route("/update/:id").put(updateSchedule);
+scheduleRouter.route("/").post(createSchedule);
+scheduleRouter.route("/").get(getAllSchedule);
+scheduleRouter.route("/:id").get(getSpecificSchedule);
+scheduleRouter.route("/:id").patch(updateSchedule);
+scheduleRouter.route("/:id").delete(deleteSchedule);
 
 export default scheduleRouter;

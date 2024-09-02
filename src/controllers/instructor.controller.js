@@ -14,14 +14,24 @@ const createInstructor = asyncHandler(async (req, res) => {
   }
 
   try {
-    const instructor = await Instructor.create({
-      Name,
-      Email,
-      Phone,
+    const existingInstructor = await Instructor.findOne({
+      where: {
+        Email,
+      },
     });
-    res
-      .status(200)
-      .json({ result: instructor, message: "Instructor created successfully" });
+    if (existingInstructor) {
+      return res.status(400).json({ message: "Instructor is already exist" });
+    } else {
+      const instructor = await Instructor.create({
+        Name,
+        Email,
+        Phone,
+      });
+      res.status(201).json({
+        result: instructor,
+        message: "Instructor created successfully",
+      });
+    }
   } catch (error) {
     console.error("Error creating instructor:", error); // Log the error for debugging
     res
@@ -43,11 +53,9 @@ const getAllInstructor = async (req, res) => {
 
 // read individual data of instructor
 const getSpecificInstructor = asyncHandler(async (req, res) => {
-  const id = req.params.id; // getting the id .of instructor from params
-  // console.log(id);
+  const id = req.params.id;
   try {
     const instructor = await Instructor.findByPk(id);
-    // console.log(instructor);
 
     if (!instructor) {
       return res.status(404).json({ message: "instructor not found" });
@@ -57,8 +65,6 @@ const getSpecificInstructor = asyncHandler(async (req, res) => {
         .json({ result: instructor, message: "Instructor read successfully" });
     }
   } catch (error) {
-    // console.log(error);
-
     res.status(400).json({ message: "Instructor could not read successfully" });
   }
 });
@@ -67,7 +73,6 @@ const getSpecificInstructor = asyncHandler(async (req, res) => {
 const updateInstructor = async (req, res) => {
   const id = req.params.id;
   const { Name, Email, Phone } = req.body;
-  // destructing when you want to get multiple data from a body
 
   try {
     const instructor = await Instructor.findByPk(id);

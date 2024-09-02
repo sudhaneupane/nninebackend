@@ -1,14 +1,13 @@
-"use strict";
-
-import { Model, DataTypes } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import sequelize from "../config/database.js";
 
 class Schedule extends Model {
-  // Define associations here if necessary
+  //define association if necessary
   static associate(models) {
-    //associations can define here
+    //define association here
   }
 }
+
 Schedule.init(
   {
     id: {
@@ -16,37 +15,40 @@ Schedule.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    CourseID: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    CourseId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Courses",
+        key: "id",
+      },
     },
-
-    ScheduleID: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    InstructorId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Instructors",
+        key: "id",
+      },
     },
 
     ClassDate: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    StartTime: {
-      type: DataTypes.TIME,
-      allowNull: false,
-    },
-    EndTime: {
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
       allowNull: false,
     },
 
-    InstructorID: {
+    StartTime: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    EndTime: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
+
   {
     sequelize,
     modelName: "Schedule",
   }
 );
+
 export default Schedule;

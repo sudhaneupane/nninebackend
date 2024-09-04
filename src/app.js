@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+// import bodyParser from "body-parser";
 const app = express(); //created express app::
 app.use(
   cors({
@@ -7,32 +8,29 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json({ limit: "20kb" })); //accept the json from frontenda
-// Serve static files from the "public" directory
-app.use(express.static("public"));
+app.use(express.json({ limit: "20kb" }));
+// app.use(bodyParser.json());
 
-//router import :
-import enrollUser from "./router/enroll.router.js";
+app.use(express.static("public"));
 import dashboardRouter from "./router/dashboard.router.js";
-// import userRouter from './router/user.router.js'
-import employeeRouter from "./router/employee.router.js";
 import studentRouter from "./router/student.router.js";
 import courseRouter from "./router/course.router.js";
 import attendanceRouter from "./router/attendance.router.js";
-import quizRouter from "./router/quiz.router.js";
+import instructorRouter from "./router/instructor.router.js";
+import scheduleRouter from "./router/schedule.router.js";
+// import quizRouter from "./router/quiz.router.js";
 
-//router declaration ::
-app.use("/api/v1/enrollment", enrollUser);
-app.use("/api/v1/dashboard", dashboardRouter);
-// app.use('/api/v1/user',userRouter)
-app.use("/api/v1/employee", employeeRouter);
-app.use("/api/v1/student", studentRouter);
-app.use("/api/v1/course", courseRouter);
-app.use("/api/v1/attendance", attendanceRouter);
-app.use("/api/v1/quiz", quizRouter);
+app.use("/api/v1/dashboards", dashboardRouter);
+// app.use('/api/v1/user',userRouter)app.use("/api/v1/employee", employeeRouter);
+app.use("/api/v1/students", studentRouter);
+app.use("/api/v1/attendances", attendanceRouter);
 
+app.use("/api/v1/courses", courseRouter);
+app.use("/api/v1/instructors", instructorRouter);
+app.use("/api/v1/schedules", scheduleRouter);
 // routes declaration
-app.use('/',(req,res)=>{
-    res.send("🆗")
-})
-export {app}
+
+// app.use("/", (req, res) => {
+//   res.send("🆗");
+// });
+export { app };

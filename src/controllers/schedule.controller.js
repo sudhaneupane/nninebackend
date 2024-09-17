@@ -1,7 +1,7 @@
 import Schedule from "../../models/schedule.model.js";
 // import {
 //   fetchCourseApi,
-//   fetchInstructorApi,
+//   fetchInstructorApi,  
 // } from "../services/api.services.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
@@ -25,7 +25,9 @@ const createSchedule = asyncHandler(async (req, res) => {
       StartTime,
       EndTime,
     });
-    res.status(200).json({ message: "Schedule created successfully" });
+    res
+      .status(200)
+      .json({ result: schedule, message: "Schedule created successfully" });
     // console.log(schedule);
   } catch (error) {
     console.log(error); // for error

@@ -1,14 +1,15 @@
-// import { addUser, checkUser } from "../controllers/user.controller.js";
-// import { Router } from "express";
-// import { sendMail } from "../services/sendMail.js";
-// import { verifyOtp } from "../controllers/otp.controller.js";
+import { Router } from "express";
+import {
+  deleteUser,
+  register,
+  signIn,
+  updateUser,
+} from "../controllers/user.controller.js";
 
-// const router = Router();
-// router.route("/login").post(checkUser);
-// router.route("/register").post(addUser);
+const userRouter = Router();
+userRouter.route("/").post(register);
+userRouter.route("/sign-in").post(signIn);
+userRouter.route("/:id").patch(updateUser);
+userRouter.route("/:id").delete(deleteUser);
 
-// //otp verification route
-// router.route("/send-otp").post(sendMail);
-// router.route("/verify").post(verifyOtp);
-
-// export default router;
+export default userRouter;

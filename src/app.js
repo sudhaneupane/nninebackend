@@ -18,6 +18,7 @@ import courseRouter from "./router/course.router.js";
 import attendanceRouter from "./router/attendance.router.js";
 import instructorRouter from "./router/instructor.router.js";
 import scheduleRouter from "./router/schedule.router.js";
+import userRouter from "./router/user.router.js";
 // import quizRouter from "./router/quiz.router.js";
 
 app.use("/api/v1/dashboards", dashboardRouter);
@@ -28,6 +29,7 @@ app.use("/api/v1/attendances", attendanceRouter);
 app.use("/api/v1/courses", courseRouter);
 app.use("/api/v1/instructors", instructorRouter);
 app.use("/api/v1/schedules", scheduleRouter);
+app.use("/api/v1/users", userRouter);
 // routes declaration
 
 // app.use("/", (req, res) => {

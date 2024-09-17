@@ -12,7 +12,7 @@ class Instructor extends Model {
 Instructor.init(
   {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },

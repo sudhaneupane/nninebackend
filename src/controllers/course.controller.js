@@ -27,6 +27,7 @@ const createCourse = asyncHandler(async (req, res) => {
       success: false,
       message: "An error occurred while created the data ",
     });
+    console.log(error);
   }
 });
 

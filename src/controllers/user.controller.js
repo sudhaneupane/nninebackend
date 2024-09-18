@@ -5,6 +5,11 @@ import bcrypt from "bcrypt";
 export const register = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
+  const existingUser = await User.findOne({ where: { email: email } });
+  if (existingUser) {
+    return res.status(409).json({ message: "User already exists." });
+  }
+
   if (typeof password !== "string") {
     return res.status(400).json({ error: "Password must be a string" });
   }
@@ -23,7 +28,6 @@ export const register = asyncHandler(async (req, res) => {
 export const signIn = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   try {
-    //following code is check of the email is register or not
     const validUser = await User.findOne({ where: { email: email } });
     if (!validUser) {
       return res.status(400).json({ message: "User not found!" });
@@ -33,8 +37,9 @@ export const signIn = asyncHandler(async (req, res) => {
     if (!validPassword) {
       return res.status(400).json({ message: "Invalid credentials" });
     } else {
-      //if both email and password is valid
-      res.status(200).json({ message: "User logged in successfully" });
+      res
+        .status(200)
+        .json({ result: validUser, message: "User logged in successfully" });
     }
   } catch (error) {
     res.status(400).json(error.message);
@@ -50,13 +55,12 @@ export const updateUser = asyncHandler(async (req, res) => {
     if (!user) {
       return res.status(400).json({ message: "could not found" });
     } else {
-      // user.email = email || user.email;
       user.password = (await bcrypt.hash(password, 10)) || user.password;
     }
 
     await user.save();
 
-    res.status(200).json({ message: "User updated successfully" });
+    res.status(200).json({ message: "User updated successfully", user });
   } catch (error) {
     res.status(400).json(error.message);
   }
